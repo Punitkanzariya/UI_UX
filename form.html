@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Contact Form</title>
+</head>
+<body>
+
+<h1>Contact Us</h1>
+<form action="/submit-form" method="POST">
+    <!-- Name field with placeholder and required -->
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required autocomplete="name"><br><br>
+
+    <!-- Email field with placeholder and required -->
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email"><br><br>
+
+    <!-- Message field with placeholder and required -->
+    <label for="message">Your Message:</label><br>
+    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required autocomplete="off"></textarea><br><br>
+
+    <!-- Submit button -->
+    <input type="submit" value="Send Message">
+</form>
+
+</body>
+</html>

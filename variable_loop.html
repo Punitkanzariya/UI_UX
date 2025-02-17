@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics Example</title>
+</head>
+<body>
+
+<h1>JavaScript Variables, Functions, Conditions, and Loops</h1>
+<p id="output"></p>
+
+<script>
+    // 1. Variables: Declare a variable and assign values
+    let number1 = 5; // A number variable
+    let number2 = 10; // Another number variable
+    let message = "The sum is: "; // A string variable
+
+    // 2. Function: Create a function to calculate the sum of two numbers
+    function calculateSum(a, b) {
+        return a + b;
+    }
+
+    // 3. Condition: Check if the sum is greater than 10
+    let sum = calculateSum(number1, number2);
+    if (sum > 10) {
+        message += "The sum is greater than 10!";
+    } else {
+        message += "The sum is 10 or less.";
+    }
+
+    // 4. Loop: Use a loop to print numbers from 1 to the sum
+    let loopMessage = "Numbers from 1 to " + sum + ":<br>";
+    for (let i = 1; i <= sum; i++) {
+        loopMessage += i + " ";
+    }
+
+    // Display the result in the webpage
+    document.getElementById("output").innerHTML = message + "<br>" + loopMessage;
+</script>
+
+</body>
+</html>
