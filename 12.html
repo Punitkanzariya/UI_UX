@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Methods Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+        #panel {
+            display: none;
+            padding: 20px;
+            background: lightblue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="animateBtn">Animate</button>
+    <button id="stopBtn">Stop</button>
+    <button id="togglePanel">Slide Toggle</button>
+    <div id="box"></div>
+    <div id="panel">This is a sliding panel of Punit Kanzariya</div>
+    
+    <script>
+        $(document).ready(function () {
+            $("#animateBtn").click(function () {
+                $("#box").animate({ left: '250px', opacity: '0.5', height: '150px', width: '150px' }, 1000);
+            });
+            
+            $("#stopBtn").click(function () {
+                $("#box").stop();
+            });
+            
+            $("#togglePanel").click(function () {
+                $("#panel").slideToggle();
+            });
+        });
+    </script>
+</body>
+</html>

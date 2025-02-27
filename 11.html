@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Effects and AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #responseBox { border: 1px solid #ddd; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>jQuery Effects and AJAX</h2>
+    <button id="getData">Get Data</button>
+    <br><br>
+    <input type="text" id="username" placeholder="Username">
+    <button id="submitData">Submit</button>
+    <div id="responseBox"></div>
+
+    <script>
+         $(document).ready(function () {
+            $("#getData").click(function () {
+                let name = "Punit Kanzariya";
+                let subject = "UI/UX";
+                $("#responseBox").html(
+                    "<strong>Name:</strong> " + name + "<br>" +
+                    "<strong>Subject:</strong> " + subject + "<br>"
+                ).hide().fadeIn();
+            });
+            // Post data request
+            $("#submitData").click(function () {
+                let username = $("#username").val();
+                let postData = { title: "User Data", body: "Username: " + username };
+                
+                $.post("https://jsonplaceholder.typicode.com/posts", postData, function (data) {
+                    $("#responseBox").html("<strong>POST Successful:</strong> " + JSON.stringify(data)).hide().fadeIn();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
